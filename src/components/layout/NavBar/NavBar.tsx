@@ -1,12 +1,17 @@
-import { Container, Navbar, Nav } from 'react-bootstrap'
+import { Container, Navbar, Nav, Image } from 'react-bootstrap'
+import './NavBar.css'
 
 interface NavBarProps {
-
+    user?: string;
+    theme?: 'light' | 'dark';
 }
 
-const NavBar: React.FC<NavBarProps> = () => {
+const NavBar: React.FC<NavBarProps> = ({
+    user = 'AJ John',
+    theme = 'dark'
+}) => {
     return (
-        <Navbar bg="dark" variant="dark" expand="lg">
+        <Navbar bg={theme} variant={theme} expand="lg">
             <Container fluid>
                 <Navbar.Brand href="/">
                     🎵 Music Sandbox
@@ -17,6 +22,10 @@ const NavBar: React.FC<NavBarProps> = () => {
                         <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/synthesizer">Synthesizer</Nav.Link>
                         <Nav.Link href="/sequencer">Sequencer</Nav.Link>
+                    </Nav>
+                    <Nav className="profile-section">
+                        <Nav.Link href="/profile">{user}</Nav.Link>
+                        <Image src="/images/aj_profile.JPEG" roundedCircle className="profile-image" />
                     </Nav>
                 </Navbar.Collapse>
             </Container>
