@@ -3,7 +3,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Image from 'react-bootstrap/Image'
 import NavDropdown from 'react-bootstrap/NavDropdown'
-import './NavBar.css'
+import './NavBar.scss'
 
 interface NavBarProps {
     user?: string;

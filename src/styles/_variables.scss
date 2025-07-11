@@ -1,0 +1,39 @@
+// Color Palette
+$primary-color: #ff6b35;
+$secondary-color: #343a40;
+$accent-color: #61dafb;
+$text-light: #ffffff;
+$text-dark: #333333;
+
+// Music Theme Colors
+$music-orange: #ff6b35;
+$music-blue: #61dafb;
+$music-dark: #1a1a1a;
+$music-gray: #2d3748;
+
+// Sizing
+$navbar-height: 60px;
+$profile-image-sm: 32px;
+$profile-image-md: 40px;
+$profile-image-lg: 48px;
+$profile-image-size: $profile-image-md;
+$profile-border-width: 1px;
+$profile-border-color: white;
+
+// Spacing
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+
+// Breakpoints
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 992px;
+$large-desktop: 1200px;
+
+// Transitions
+$transition-fast: 0.15s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;

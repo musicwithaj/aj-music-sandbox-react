@@ -1,0 +1,47 @@
+@import '/src/styles/variables';
+
+// Mixins for reusable styles
+@mixin flex-row-center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@mixin circle-image($size: $profile-image-size) {
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+// Main styles with nesting
+.profile-nav {
+    @include flex-row-center;
+    
+    .profile-image {
+        @include circle-image;
+        border: $profile-border-width solid $profile-border-color;
+        transition: transform 0.2s ease;
+        
+        &:hover {
+            transform: scale(1.05);
+            border-color: rgba($profile-border-color, 0.8);
+        }
+    }
+    
+    .dropdown-toggle {
+        border: none !important;
+        background: transparent !important;
+        padding: 0.5rem !important;
+        
+        &:focus,
+        &:hover {
+            box-shadow: none !important;
+            background: rgba(255, 255, 255, 0.1) !important;
+        }
+        
+        &::after {
+            margin-left: 0.5rem;
+        }
+    }
+}
