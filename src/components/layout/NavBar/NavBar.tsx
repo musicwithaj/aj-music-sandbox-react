@@ -1,4 +1,8 @@
-import { Container, Navbar, Nav, Image } from 'react-bootstrap'
+import Container from 'react-bootstrap/Container'
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+import Image from 'react-bootstrap/Image'
+import NavDropdown from 'react-bootstrap/NavDropdown'
 import './NavBar.css'
 
 interface NavBarProps {
@@ -23,9 +27,21 @@ const NavBar: React.FC<NavBarProps> = ({
                         <Nav.Link href="/synthesizer">Synthesizer</Nav.Link>
                         <Nav.Link href="/sequencer">Sequencer</Nav.Link>
                     </Nav>
-                    <Nav className="profile-section">
-                        <Nav.Link href="/profile">{user}</Nav.Link>
-                        <Image src="/images/aj_profile.JPEG" roundedCircle className="profile-image" />
+                    <Nav className='profile-nav'>
+                        <Nav.Item>
+                            <div className="d-flex flex-row align-items-center gap-2">
+                                <Image src="/images/aj_profile.JPEG" roundedCircle className="profile-image" />
+                            </div>
+                        </Nav.Item>
+                        <NavDropdown title={user} id="nav-dropdown" align="end">
+                            {/* Use eventKey to handle clicks programatically and prevent default navigation. Good for modals or state changes */}
+                            {/* Use href for simple page navigation, for normal browser navigation behavior, and for SEO-friendly links */}
+                            <NavDropdown.Item eventKey="4.1">👤 Profile</NavDropdown.Item>
+                            <NavDropdown.Item eventKey="4.2">⚙️ Settings</NavDropdown.Item>
+                            <NavDropdown.Item eventKey="4.3">🎧 Studio</NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item eventKey="4.4">🚪 Sign Out</NavDropdown.Item>
+                        </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

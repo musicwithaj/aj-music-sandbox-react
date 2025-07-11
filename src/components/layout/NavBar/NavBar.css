@@ -1,8 +1,10 @@
-.profile-section {
-    display: flex;
-    align-items: center;
-}
 .profile-image {
     width: 2em;
     height: 2em;
+}
+
+.profile-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
